@@ -28,8 +28,8 @@ class Neighbourhood(models.Model):
   health_dept = models.IntegerField(default="0722567432")
   user = models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
 
-  def save_neighbourhood(self):
-    self.save()
+  # def save_neighbourhood(self):
+  #   self.save()
 
   def update_neighbourhood(self):
     self.update()
