@@ -22,9 +22,9 @@ def index(request):
   neighbourhoods = Neighbourhood.objects.all()
   return render(request,'index.html',{"neighbourhoods":neighbourhoods})
 
-# def home(request):
-#   neighbourhoods = Neighbourhood.objects.filter(user=request.user)
-#   posts = []
+def home(request):
+  neighbourhoods = Neighbourhood.objects.filter(user=request.user)
+  posts = []
   for neighbourhood in neighbourhoods:
     try:
       hoodposts = Posts.objects.filter(hood = neighbourhood)
