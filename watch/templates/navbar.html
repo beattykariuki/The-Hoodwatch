@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Hoodwatch</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/"><i class="fas fa-home"></i>&nbsp;Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Profile&nbsp;<i class="fas fa-user-circle"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                    <a class="dropdown-item" href="{% url 'add_hood' %}">Add Hood</a>
+                    <a class="dropdown-item" href="{% url 'home' %}">My Hood</a>
+                    <a class="dropdown-item" href="{% url 'add_post' %}">Add Post</a>
+                    <a class="dropdown-item" href="{% url 'posts' %}">Posts</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Business&nbsp;<i class="fas fa-briefcase"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'add_business' %}">Add Business&nbsp;<i class="fas fa-plus"></i></a>
+                    <a class="dropdown-item" href="{% url 'added_businesses' %}">My Businesses</a>
+                    <!-- <a class="dropdown-item" href="/logout/">Log out</a> -->
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Accounts&nbsp;<i class="fas fa-user-cog"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+                    <a class="dropdown-item" href="/logout/">Log out</a>
+                </div>
+            </li>
+        </ul>
+        <a style="padding-left:800px !important;color:rgb(189, 188, 188) !important;font-size: 18px;" href="{% url 'profile'%}"><i
+                class="fas fa-user"></i>&nbsp;{{user.username}}</a>
+    </div>
+</nav>

@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+<br>
+<br>
+<div class="row container" style="padding-bottom:20px">
+
+    <div class="col-xs-12 col-sm-12 col-md-3">
+
+
+    </div>
+    <div class="col-md-7">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center">Create Hood Here :</h3>
+            </div>
+            <div class="panel-body">
+                <form name="form" action="{% url 'add_hood' %}" method="POST">
+
+                    {%csrf_token%}
+                    {%bootstrap_form form %}
+                    <button type="submit" class="btn btn-success btn-sm btn-block">Add Hood</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+
+{%endblock%}

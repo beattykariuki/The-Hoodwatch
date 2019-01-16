@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid search">
+    <div class="col-xs-12 col-sm-6 col-md-12 contents">
+        <div class="container image">
+            <form class="form" role="search" method="GET" action="{% url 'search_results' %}">
+
+                <div class="input-group">
+                    <input type="text" class="form-control input" placeholder=" Search Neighbourhood" name="neighbourhood">&nbsp;&nbsp;
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="button"><i class="fas fa-search"></i></button>
+                </div>
+                <br>
+
+                <center>
+                    <p class="searches" style=" color:#ece3d1;;font-family: 'Lora', serif;font-size: 21.5px;padding-right: 170px;"></p>
+                </center>
+
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row" style="padding-bottom:20px">
+
+        <div class="col-sm-12 col-sm-12 col-md-12">
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                {% if neighbourhoods %}
+
+                {% for neighbourhood in neighbourhoods %}
+                <div class="col-xs-12 col-sm-12 col-md-4" style="width:100% !important;">
+                    <div class="card" style="width:100% !important;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+                        <div class="card-body">
+                            <p style="font-weight:bolder;text-decoration-line: underline;">{{neighbourhood.name}}({{neighbourhood.location}})</p>
+                            <p>{{neighbourhood.description.capitalize}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'join_hood' neighbourhood.id %}" class="btn btn-sm btn-success">Join Hood</a>
+                            {% if neighbourhood.user_id == user.id %}
+                            <a href="{% url 'add_hood' %}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                            {% endif %}
+                            {% if neighbourhood.user_id == user.id %}
+                            <a href="{% url 'delete_hood' neighbourhood.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                {%else%}
+                <h4>You have not added any neighbourhoods yet! You can create one <a href="{% url 'add_hood' %}">here</a>
+                </h4>
+                {%endif%}
+
+
+
+            </div>
+
+        </div>
+
+        {% endblock %}
+
+
+    </div>
+</div>

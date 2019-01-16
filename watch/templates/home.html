@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+    <div class="row" style="padding-bottom:20px">
+
+        <div class="col-sm-12 col-sm-12 col-md-12">
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                {% if neighbourhoods %}
+
+                {% for neighbourhood in neighbourhoods %}
+                <div class="col-xs-12 col-sm-12 col-md-4" style="width:100% !important;">
+                    <br>
+                    <br>
+                    <div class="card" style="width:100% !important;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+                        <div class="card-body">
+                            <p style="font-weight:bolder;text-decoration-line: underline;">{{neighbourhood.name}}({{neighbourhood.location}})</p>
+                            <p style="font-size:17px !important;">{{neighbourhood.description.capitalize}}</p>
+                            <p><b>Police Department: </b>{{neighbourhood.police_dept}}</p>
+                            <p><b>Health Department: </b>{{neighbourhood.health_dept}}</p>
+                        </div>
+                        <div class="card-footer">
+                            {% if neighbourhood.user_id == user.id %}
+                            <a href="{% url 'add_hood' %}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                            {% endif %}
+                            {% if neighbourhood.user_id == user.id %}
+                            <a href="{% url 'delete_hood' neighbourhood.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                {%else%}
+                <h4>You have not added any neighbourhoods yet! You can create one <a href="{% url 'add_hood' %}">here</a>
+                </h4>
+                {%endif%}
+                <div>{% if posts%}
+                <h2>Posts</h2>
+                {% for post in posts %}
+                <p>{{post.post}}</p>
+                {% endfor %}
+                
+                {% endif %}</div>
+                
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+{%endblock%}

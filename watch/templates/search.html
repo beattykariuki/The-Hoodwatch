@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+{% load static%}
+
+{% block styles%}
+{{block.super}}
+
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div class="container">
+
+    <div class="row">
+        {% if neighbourhood %}
+        <h2 style="color:rgb(119, 1, 1);">Found {{ neighbourhood|length }} of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found 0 neighbourhoods for the search term {{message}}</h2>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock%}
