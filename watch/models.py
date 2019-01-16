@@ -139,7 +139,7 @@ class Join(models.Model):
   def __str__(self):
     return self.user_id.username
 
-class Posts(models.Model):
+# class Posts(models.Model):
   '''
   Class that enables one create a post on a neighbourhood
   '''
