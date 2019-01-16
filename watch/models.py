@@ -9,7 +9,7 @@ class Neighbourhood(models.Model):
   '''
   class that contains Neighbourhood properties
   '''
-  LOCATION_CHOICES = (
+  # LOCATION_CHOICES = (
     ('Embakasi','Embakasi'),
     ('Westlands','Westlands'),
     ('Kahawa sukari','Kahawa sukari'),
