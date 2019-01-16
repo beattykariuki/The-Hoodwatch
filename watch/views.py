@@ -13,7 +13,6 @@ from django.core.mail import EmailMessage
 import datetime as dt
 from django.contrib.auth.decorators import login_required
 
-# from .tokens import account_activation_token
 from .models import Neighbourhood,Business,Profile,Posts,Comments,Join
 from .forms import SignupForm,AddHoodForm,AddBusinessForm,UpdateProfileForm,PostForm
 
