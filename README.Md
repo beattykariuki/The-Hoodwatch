@@ -1,7 +1,7 @@
 ## THE-NEIGHBOURHOOD
 
 ## Description
- This a web-app that enables users to join a neighbourhood, view different businesses that being carried out and announcements.
+ This is a web-app that enables users to join a neighbourhood, view different businesses that being carried out and announcements.
 
 
 ## Installation Requirements
