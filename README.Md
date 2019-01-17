@@ -6,11 +6,25 @@
 
 ## Installation Requirements
 
-* Create Directory on your computer to store the application. * Initialise git on the target directory using the following command; $ git init On your terminal,Run `git clone  * * https://github.com/beattykariuki/Insta-clone On your terminal,Navigate to created directory. Run the following commands to allow functionality of the app:- sudo apt-get update sudo apt-get install python3.6 python3.6 -m venv virtual source virtual/bin/activate
+* Create Directory on your computer to store the application.
+* Initialise git on the target directory using the following command; $ git init On your terminal,Run `git clone https://github.com/beattykariuki/Insta-clone On your terminal,Navigate to created directory. Run the following commands to allow functionality of the app:- sudo apt-get update sudo apt-get install python3.6 python3.6 -m venv virtual source virtual/bin/activate
 
-Download the latest version of pip in the virtual environment: $ curl https://bootstrap.pypa.io/get-pip.py | python pip install -r requirements.txt User Stories The application user is able to:
+* Download the latest version of pip in the virtual environment: $ curl https://bootstrap.pypa.io/get-pip.py | python pip install -r requirements.txt User Stories The application user is able to:
 
-View different photos that interest me. Click on a single photo to expand it and also view the details of the photo. Search for different categories of photos. (ie. Music, Sports) Copy a link to the photo to share with friends. View photos based on the location they were taken.
+* View different photos that interest me. 
+* Click on a single photo to expand it and also view the details of the photo. 
+* Search for different categories of photos. (ie. Music, Sports) Copy a link to the photo to share with friends.
+* View photos based on the location they were taken.
+
+## User Stories
+
+The user application can;
+
+* Sign in to start the application and logout after they are done.
+* Leave their hood and join a different one.
+* Post anything that is happening around the hood.
+* See their profiles and able to add  businesses and around the hood.
+* Access the contacts to the nearest health facilities and police stations.
 
 ## Technologies Used
 
@@ -22,6 +36,10 @@ View different photos that interest me. Click on a single photo to expand it and
 * Heroku(Deployment)
 * Known Bugs
 * No known bugs so far
+
+## Deployment Host
+
+Heroku
 
 ## License
 
