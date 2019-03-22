@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+
+<div class="container">
+
+    <div class="col-xs-12 col-sm-12 col-md-12" style="padding-top: 0px">
+
+    </div>
+    <br>
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="">Edit Profile</h3>
+            </div>
+            <div class="panel-body">
+                <form action="{% url 'update_profile' %}" method="post">
+
+                    {%csrf_token%}
+                    {% bootstrap_form form %}
+                    <button type="submit" class="btn btn-success btn-sm">Update Profile</button>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+{%endblock%}
