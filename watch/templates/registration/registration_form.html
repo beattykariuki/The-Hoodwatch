@@ -2,6 +2,10 @@
 {%load static%}
 {% load bootstrap4 %}
 {% block content %}
+<!DOCTYPE html>
+<html>
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+
 <!-- <br> -->
 <br>
 <br>
@@ -19,9 +23,9 @@
                 {% if form.errors %}
                 <p> Password or Username is incorrect </p>
                 {% endif %}
-                <div class="well" style="width:100% !important;border: solid rgb(3, 11, 90);">
+                <div class="well" style="width:100% cursive;background-color:  rgb(209, 184, 184); opacity: 0.6;">
                     <div class="panel-header">
-                        <h2 style="text-align:center;font-size: 40px;">Sign up</h2>
+                        <h2 style="text-align:center;font-size: 40px;font-family: 'Niconne', cursive; color:rgb(0, 0, 0)">Sign up</h2>
                     </div>
                     <hr>
                     <form action="/accounts/register/" method="post" style="text-align:center;font-size: 17px;">
@@ -36,7 +40,7 @@
                             <small style="display: none">{{ field.help_text }}</small>
                             {% endif %}
                             {% for error in field.errors %}
-                            <p style="color: red">{{ error }}</p>
+                            <p style="color: rgba(124, 7, 7, 0.658)">{{ error }}</p>
                             {% endfor %}
                         </p>
                         {% endfor %}
@@ -44,7 +48,7 @@
                         <br>
                         <br>
                         <center>
-                            <p class="have">Have an account? <a href="/accounts/login">Log in</a> </p>
+                            <p class="have" style="color: black;">Have an account? <a href="/accounts/login" style="color: rgb(79, 97, 155);">Log in</a> </p>
                         </center>
                     </form>
                     <br>
@@ -56,8 +60,13 @@
         </div>
     </div>
 
-    {% endblock %}
-
+    <style>
+        body {
+            background-image: url('http://blog.reillypainting.com/wp-content/uploads/2011/05/Neighborhood.jpg');
+        }
+    </style>
 
 
 </body>
+</html>
+{% endblock %}

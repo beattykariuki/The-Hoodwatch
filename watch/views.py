@@ -14,7 +14,7 @@ import datetime as dt
 from django.contrib.auth.decorators import login_required
 
 from .models import Neighbourhood,Business,Profile,Posts,Comments,Join
-from .forms import SignupForm,AddHoodForm,AddBusinessForm,UpdateProfileForm,PostForm
+from .forms import SignupForm,AddHoodForm,AddBusinessForm,UpdateProfileForm,AddPostForm
 
 # Create your views here.
 @login_required(login_url='/accounts/login')
@@ -130,7 +130,7 @@ def update_profile(request):
 def add_post(request):
   if Join.objects.filter(user_id=request.user).exists():
     if request.method == 'POST':
-      form = PostForm(request.POST)
+      form = AddPostForm(request.POST)
       if form.is_valid():
         post = form.save(commit=False)
         post.user = request.user
@@ -139,7 +139,7 @@ def add_post(request):
         return redirect('index')
 
     else:
-      form = PostForm()
+      form = AddPostForm()
       return render(request,'add_post.html',{'form':form})
   else:
     messages.error(request,'Error!!Post can only be added after joining a neighbourhood!')

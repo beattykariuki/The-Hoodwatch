@@ -15,7 +15,7 @@
 
 {% block content %}
 <body>
-    <h1 class="text-center" style="text-align:center; font-size: 70px; font-family: 'Niconne', cursive;">Welcome to hoodneno</h1>
+    <h1 class="animated rollIn fastertext-center" style="text-align:center; font-size: 70px; font-family: 'Niconne', cursive;background-color:black; opacity: 0.6; width: 600px; margin:auto; margin-top: 100px; font-weight:bolder; color: white; ">Welcome to hoodneno</h1>
     <div class="container">
         <div class="row">
             <!-- Empty div -->
@@ -31,10 +31,10 @@
                 <br>
                 <br>
                 <div class="col-xs-12 col-sm-12 col-md-12 ">
-                    <!-- <div class="well" style="width:100% !important;border: solid blue;"> -->
+                    <div class="well" style="width:100% cursive;background-color: rgb(209, 184, 184); opacity: 0.6; margin-top:-100px;">
 
                         <div class="well-heading">
-                            <h2 class="text-center" style="text-align:center;font-size: 40px;font-family: 'Niconne', cursive;">Sign In</h2>
+                            <h2 class="text-center" style="text-align:center;font-size: 40px;font-family: 'Niconne', cursive; color: rgb(0, 0, 0)">Sign In</h2>
                         </div>
                         <hr>
                         <div class="panel-body">
@@ -47,7 +47,7 @@
                                     <input type="submit" class="btn btn-success btn-lg" value="Login">
                                 </div>
                                 <br>
-                                <p class="have">Don't have an account? <a href="/accounts/register">Sign Up</a> </p>
+                                <p class="have" style="color:rgb(0, 0, 0)";>Don't have an account? <a href="/accounts/register" style="color: rgb(140, 160, 228);">Sign Up</a> </p>
 
                                 <input type="hidden" name="next" value="{{next}}">
 
@@ -63,7 +63,11 @@
             <div class="col-md-4"></div>
         </div>
     </div>
-
+    <style>
+    body{
+        background-image: url('http://blog.reillypainting.com/wp-content/uploads/2011/05/Neighborhood.jpg');
+    }
+    </style>
 </body>
 </html>
 

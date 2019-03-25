@@ -1,4 +1,4 @@
-{%extends 'base.html'%}
+ {%extends 'base.html'%}
 {%block content%}
 <div class="container">
     <div class="row" style="padding-bottom:20px">
@@ -27,6 +27,9 @@
                             {% endif %}
                             {% if neighbourhood.user_id == user.id %}
                             <a href="{% url 'delete_hood' neighbourhood.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+                            {% if neighbourhood.user_id == user.id %}
+                            <a href="{% url 'add_post' %}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
                             {% endif %}
                         </div>
                     </div>

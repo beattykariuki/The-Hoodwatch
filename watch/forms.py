@@ -26,7 +26,8 @@ class UpdateProfileForm(forms.ModelForm):
     model = Profile
     fields = ['bio']
 
-class PostForm(forms.ModelForm):
+class AddPostForm(forms.ModelForm):
   class Meta:
     model = Posts
     fields = ['topic','post']
+
