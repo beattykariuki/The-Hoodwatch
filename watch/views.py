@@ -145,9 +145,11 @@ def add_post(request):
     messages.error(request,'Error!!Post can only be added after joining a neighbourhood!')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+
+@login_required(login_url='/accounts/login/')
 def posts(request):
   posts = Posts.objects.filter(user = request.user)
-  return render(request,'posts.html')
+  return render(request,'posts.html',locals())
 
 
 @login_required(login_url='/accounts/login/')
