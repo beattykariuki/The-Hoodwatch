@@ -22,6 +22,7 @@
                 <p>{{post.post}}</p>
 
                 {% if post.user_id == user.id %}
+                <!-- <a href="{% url 'edit_post' post.id%}" class="btn btn-sm btn-primary">Edit</a> -->
                 {% endif %}
 
                 {% if post.user_id == user.id %}

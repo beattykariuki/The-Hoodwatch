@@ -51,13 +51,12 @@
                             {% if neighbourhood.user_id == user.id %}
                             <a href="{% url 'delete_hood' neighbourhood.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                             {% endif %}
-
                         </div>
                     </div>
                 </div>
                 {%endfor%}
                 {%else%}
-                <h4>You have not added any neighbourhoods yet! You can create one <a href="{% url 'add_hood' %}">here</a>
+                <h4>You have not added any neighbourhoods yet! You can create one here <a href="{% url 'add_hood' %}">here</a>
                 </h4>
                 {%endif%}
 

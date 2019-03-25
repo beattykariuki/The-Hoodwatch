@@ -149,7 +149,7 @@ def add_post(request):
 @login_required(login_url='/accounts/login/')
 def posts(request):
   posts = Posts.objects.filter(user = request.user)
-  return render(request,'posts.html',locals())
+  return render(request,'posts.html',)
 
 
 @login_required(login_url='/accounts/login/')

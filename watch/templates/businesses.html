@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="container" style="padding-bottom:20px">
+
+    <div class="col-xs-12 col-sm-12 col-md-12" style="padding-top: 24px">
+    </div>
+    <div class="container">
+        <div class="col-md-9">
+            <br>
+            <h4>Below are the businesses you have created:</h4>
+            <br>
+            <div class="row">
+                {% if businesses %}
+
+                {%for business in businesses%}
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="card" style="width:100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-left: 20px !important;">
+
+                        <div class="panel-heading">
+                            <p style="font-weight:bolder;text-decoration-line: underline;">{{business.name}}</p>
+                        </div>
+                        <div class="panel-body">
+                            <p>{{business.description}}</p>
+                            <p>{{business.email}}</p>
+
+                            <!-- {% if business.user_id == user.id %}
+                            <a href="{% url 'edit_business' business.id %}" class="btn btn-sm btn-success">Update</a>
+                            {% endif %} -->
+
+                            {% if business.user_id == user.id %}
+                            <a href="{% url 'delete_business' business.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+
+                        </div>
+                        <br>
+
+
+
+                    </div>
+                </div>
+                {%endfor%}
+                {%else%}
+                <h4>You haven't created any businesses yet. You can add them <a href="{% url 'add_business' %}">here</a>
+                </h4>
+                {%endif%}
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{%endblock%}
