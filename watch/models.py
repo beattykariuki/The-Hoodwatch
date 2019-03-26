@@ -66,7 +66,7 @@ class Profile(models.Model):
   class that contains user Profile properties
   '''
   bio = models.TextField()
-  user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
+  user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True,related_name='profile')
   hood = models.OneToOneField(Neighbourhood,on_delete=models.CASCADE,blank=True,null=True)
 
   @receiver(post_save, sender=User)
@@ -127,7 +127,7 @@ class Business(models.Model):
     return business
 
   def __str__(self):
-    self.name
+    return self.name
 
 class Join(models.Model):
   '''

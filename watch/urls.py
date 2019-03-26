@@ -18,6 +18,7 @@ urlpatterns=[
   url(r'^update_profile/$',views.update_profile,name= 'update_profile'),
   url(r'^add_post/',views.add_post,name = 'add_post'),
   url(r'^posts/$',views.posts,name = 'posts'),
+  url(r'^all_post/$', views.all_post, name='all_post'),
   url(r'search/', views.search_results, name='search_results'),
   url(r'^delete_business/(\d+)',views.delete_business,name = 'delete_business'),
 ]

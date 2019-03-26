@@ -22,7 +22,6 @@
                 <p>{{post.post}}</p>
 
                 {% if post.user_id == user.id %}
-                <!-- <a href="{% url 'edit_post' post.id%}" class="btn btn-sm btn-primary">Edit</a> -->
                 {% endif %}
 
                 {% if post.user_id == user.id %}
@@ -38,8 +37,7 @@
         <br>
         {%endfor%}
         {%else%}
-        <!-- <h4>You havent created any forum posts yet. You can create one <a href="{% url 'add_post' %}">here</a> </h4>
-        {%endif%} -->
+        {%endif%} 
 
 
 

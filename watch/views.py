@@ -68,13 +68,13 @@ def add_hood(request):
 @login_required(login_url='/accounts/login/')
 def join_hood(request,hood_id):
 	neighbourhood = Neighbourhood.objects.get(pk = hood_id)
+  # # current = request.user
+  # # current.profile.hood=neighbourhood
+  # request.user.profile.save()
 	if Join.objects.filter(user_id = request.user).exists():
-		
 		Join.objects.filter(user_id = request.user).update(hood_id = neighbourhood)
 	else:
-		
 		Join(user_id=request.user,hood_id = neighbourhood).save()
-
 	messages.success(request, 'Success! You have succesfully joined this Neighbourhood ')
 	return redirect('index')
 
@@ -104,8 +104,8 @@ def add_business(request):
 
 @login_required(login_url='/accounts/login/')
 def added_businesses(request):
-	businesses= Business.objects.filter(user = request.user)
-	return render(request,'businesses.html')
+	businesses= Business.objects.filter(neighbourhood = request.user.profile.hood)
+	return render(request,'businesses.html',{"businesses":businesses})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
@@ -148,8 +148,8 @@ def add_post(request):
 
 @login_required(login_url='/accounts/login/')
 def posts(request):
-  posts = Posts.objects.filter(user = request.user)
-  return render(request,'posts.html',)
+  posts = Posts.objects.filter(hood = request.user.profile.hood)
+  return render(request,'posts.html',{"posts":posts})
 
 
 @login_required(login_url='/accounts/login/')
@@ -182,4 +182,9 @@ def delete_business(request,business_id):
   Business.objects.filter(pk=business_id).delete()
   return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-  
+
+def all_post(request):
+
+  business = Business.objects.all()
+  post = Posts.objects.all()
+  return render(request, 'all_hood.html',locals())

@@ -25,10 +25,6 @@
                             <p>{{business.email}}</p>
 
                             {% if business.user_id == user.id %}
-                            <a href="{% url 'edit_business' business.id %}" class="btn btn-sm btn-success">Update</a>
-                            {% endif %}
-
-                            {% if business.user_id == user.id %}
                             <a href="{% url 'delete_business' business.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                             {% endif %}
 

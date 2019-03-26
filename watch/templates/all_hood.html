@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% block content%}
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                {% for x in business %}
+                {{x.description}}
+                {{x.email}}
+                {{x.user}}
+                {% 0 %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% for y in post %}
+            {{y.topic}}
+            {{y.post}}
+            {{y.user}}
+            {{y.hood}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{%endblock%}
+
