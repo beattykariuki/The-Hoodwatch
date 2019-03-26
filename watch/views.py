@@ -100,7 +100,7 @@ def add_business(request):
 
 	else:
 		form = AddBusinessForm()
-		return render(request,'add_business.html')
+		return render(request,'add_business.html',locals())
 
 @login_required(login_url='/accounts/login/')
 def added_businesses(request):
@@ -124,7 +124,7 @@ def update_profile(request):
 			return redirect('profile')
 	else:
 		form = UpdateProfileForm(instance = profile )
-		return render(request,'profile/update_profile.html')
+		return render(request,'profile')
 
 @login_required(login_url='/accounts/login/')
 def add_post(request):
