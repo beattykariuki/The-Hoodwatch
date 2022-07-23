@@ -109,7 +109,7 @@ class Business(models.Model):
     self.delete
 
   def update_business(self):
-    self.update
+    self.updateNeighbourhood
 
   @classmethod
   def find_business(cls,id):

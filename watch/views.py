@@ -23,13 +23,12 @@ def index(request):
   return render(request,'index.html',{"neighbourhoods":neighbourhoods})
 
 def home(request):
-  neighbourhoods = Neighbourhood.objects.filter(user=request.user)
-  posts = []
-  for neighbourhood in neighbourhoods:
+  neighbourhoods = Neighbourhood.objects.filter(user=request.user) # Get hoods that the user is part of
+  posts = [] # Instantiate an empty array of posts
+  for neighbourhood in neighbourhoods: # Iterate through each hood
     try:
-      hoodposts = Posts.objects.filter(hood = neighbourhood)
-      for post in hoodposts:
-        posts.append(post)
+      # For every hood check post in that hood
+      posts = Posts.objects.filter(hood = neighbourhood)
     except:
       None
 
